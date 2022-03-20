@@ -3,7 +3,7 @@ const hre = require("hardhat");
 async function main() {
 
   // We get the contract to deploy
-  const mytoken = await hre.ethers.getContractFactory("DogToken");
+  const mytoken = await hre.ethers.getContractFactory("CatToken");
   const dog = await mytoken.deploy();
 
   await dog.deployed();
