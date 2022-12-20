@@ -1,0 +1,988 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "admin",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "NFTBurn",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "liquidity",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"name": "NFTMint",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "previousAdminRole",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "newAdminRole",
+				"type": "bytes32"
+			}
+		],
+		"name": "RoleAdminChanged",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "RoleGranted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "RoleRevoked",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "TokenBurn",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"name": "liquidityCollect",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"name": "liquidityDecrease",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "liquidity",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"name": "liquidityIncrease",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "DEFAULT_ADMIN_ROLE",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "MANAGE_ROLE",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "approve0",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "approve1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int256",
+				"name": "startTick",
+				"type": "int256"
+			},
+			{
+				"internalType": "int256",
+				"name": "tickSapce",
+				"type": "int256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "num",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount0Desired",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1Desired",
+				"type": "uint256"
+			}
+		],
+		"name": "batchMint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "burnNFT",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "burnToken0",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "burnToken1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount0Max",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount1Max",
+						"type": "uint128"
+					}
+				],
+				"internalType": "struct ILiquidityFound.CollectParams",
+				"name": "params",
+				"type": "tuple"
+			}
+		],
+		"name": "collect",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "deadline",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount0Min",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount1Min",
+						"type": "uint128"
+					}
+				],
+				"internalType": "struct ILiquidityFound.DecreaseLiquidityParams",
+				"name": "params",
+				"type": "tuple"
+			}
+		],
+		"name": "decreaseLiquidity",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			}
+		],
+		"name": "getRoleAdmin",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTokenCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getTokenId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "grantRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "hasRole",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint192",
+						"name": "tokenId",
+						"type": "uint192"
+					},
+					{
+						"internalType": "uint64",
+						"name": "deadline",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount0Desired",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount1Desired",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount0Min",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount1Min",
+						"type": "uint128"
+					}
+				],
+				"internalType": "struct ILiquidityFound.IncreaseLiquidityParams",
+				"name": "params",
+				"type": "tuple"
+			}
+		],
+		"name": "increaseLiquidity",
+		"outputs": [
+			{
+				"internalType": "uint128",
+				"name": "liquidity",
+				"type": "uint128"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "int24",
+						"name": "tickLower",
+						"type": "int24"
+					},
+					{
+						"internalType": "int24",
+						"name": "tickUpper",
+						"type": "int24"
+					},
+					{
+						"internalType": "uint128",
+						"name": "deadline",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount0Desired",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount1Desired",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount0Min",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount1Min",
+						"type": "uint128"
+					}
+				],
+				"internalType": "struct ILiquidityFound.MintParams",
+				"name": "params",
+				"type": "tuple"
+			}
+		],
+		"name": "mint",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint128",
+				"name": "liquidity",
+				"type": "uint128"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int256",
+				"name": "tickLower",
+				"type": "int256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountDesired",
+				"type": "uint256"
+			}
+		],
+		"name": "mintLeftside",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint128",
+				"name": "liquidity",
+				"type": "uint128"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int256",
+				"name": "tickUpper",
+				"type": "int256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountDesired",
+				"type": "uint256"
+			}
+		],
+		"name": "mintRightside",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint128",
+				"name": "liquidity",
+				"type": "uint128"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount1",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "positions",
+		"outputs": [
+			{
+				"internalType": "uint96",
+				"name": "nonce",
+				"type": "uint96"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "token01",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "token11",
+				"type": "address"
+			},
+			{
+				"internalType": "uint24",
+				"name": "fee1",
+				"type": "uint24"
+			},
+			{
+				"internalType": "int24",
+				"name": "tickLower",
+				"type": "int24"
+			},
+			{
+				"internalType": "int24",
+				"name": "tickUpper",
+				"type": "int24"
+			},
+			{
+				"internalType": "uint128",
+				"name": "liquidity",
+				"type": "uint128"
+			},
+			{
+				"internalType": "uint256",
+				"name": "feeGrowthInside0LastX128",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "feeGrowthInside1LastX128",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint128",
+				"name": "tokensOwed0",
+				"type": "uint128"
+			},
+			{
+				"internalType": "uint128",
+				"name": "tokensOwed1",
+				"type": "uint128"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "renounceRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "revokeRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_nfpm",
+				"type": "address"
+			}
+		],
+		"name": "setNfpm",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int256",
+				"name": "_tickSpacing",
+				"type": "int256"
+			}
+		],
+		"name": "setTickSpacing",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_token0",
+				"type": "address"
+			}
+		],
+		"name": "setToken0",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_token1",
+				"type": "address"
+			}
+		],
+		"name": "setToken1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "pool",
+				"type": "address"
+			}
+		],
+		"name": "setV3Pool",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "slot0",
+		"outputs": [
+			{
+				"internalType": "uint160",
+				"name": "sqrtPriceX96",
+				"type": "uint160"
+			},
+			{
+				"internalType": "int24",
+				"name": "tick",
+				"type": "int24"
+			},
+			{
+				"internalType": "uint16",
+				"name": "observationIndex",
+				"type": "uint16"
+			},
+			{
+				"internalType": "uint16",
+				"name": "observationCardinality",
+				"type": "uint16"
+			},
+			{
+				"internalType": "uint16",
+				"name": "observationCardinalityNext",
+				"type": "uint16"
+			},
+			{
+				"internalType": "uint8",
+				"name": "feeProtocol",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bool",
+				"name": "unlocked",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes4",
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

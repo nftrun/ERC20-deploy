@@ -1,0 +1,1285 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "admin",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "startId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "stock",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "sales",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "price0",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint112",
+						"name": "price1",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust1",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust2",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust3",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseSpecialty",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseComfort",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseAesthetic",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "durability",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "level",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "status",
+						"type": "uint16"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct RunbitCollection.CardCollection",
+				"name": "cc",
+				"type": "tuple"
+			}
+		],
+		"name": "CardCollectionAdd",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "startId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "stock",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "sales",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "level",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "equipType",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "status",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint32",
+						"name": "capacity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint48",
+						"name": "quality",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint64",
+						"name": "price0",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint112",
+						"name": "price1",
+						"type": "uint112"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct RunbitCollection.EquipCollection",
+				"name": "cc",
+				"type": "tuple"
+			}
+		],
+		"name": "EquipCollectionAdd",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "NFTCardBuy",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "uri",
+				"type": "string"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "specialty",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "comfort",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "aesthetic",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "durability",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "level",
+						"type": "uint32"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct IRunbitCard.MetaData",
+				"name": "meta",
+				"type": "tuple"
+			}
+		],
+		"name": "NFTCardMint",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "NFTCardRedeem",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "NFTEquipBuy",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "equipId1",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "equipId2",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "fee",
+				"type": "uint256"
+			}
+		],
+		"name": "NFTEquipForge",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "uri",
+				"type": "string"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "equipType",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "upgradeable",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint64",
+						"name": "level",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "capacity",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "quality",
+						"type": "uint64"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct IRunbitEquip.MetaData",
+				"name": "meta",
+				"type": "tuple"
+			}
+		],
+		"name": "NFTEquipMint",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "NFTEquipRedeem",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "previousAdminRole",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "newAdminRole",
+				"type": "bytes32"
+			}
+		],
+		"name": "RoleAdminChanged",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "RoleGranted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "RoleRevoked",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "DEFAULT_ADMIN_ROLE",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "MANAGE_ROLE",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "startId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "stock",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "sales",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "price0",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint112",
+						"name": "price1",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust1",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust2",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust3",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseSpecialty",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseComfort",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseAesthetic",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "durability",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "level",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "status",
+						"type": "uint16"
+					}
+				],
+				"internalType": "struct RunbitCollection.CardCollection",
+				"name": "colection",
+				"type": "tuple"
+			}
+		],
+		"name": "addCardCollection",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "startId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "stock",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "sales",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "level",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "equipType",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "status",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint32",
+						"name": "capacity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint48",
+						"name": "quality",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint64",
+						"name": "price0",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint112",
+						"name": "price1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct RunbitCollection.EquipCollection",
+				"name": "ec",
+				"type": "tuple"
+			}
+		],
+		"name": "addEquipCollection",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			}
+		],
+		"name": "buyCard",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			}
+		],
+		"name": "buyEquip",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "status",
+				"type": "uint256"
+			}
+		],
+		"name": "editCardCollection",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price0",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "status",
+				"type": "uint256"
+			}
+		],
+		"name": "editEquipCollection",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "equipId1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "equipId2",
+				"type": "uint256"
+			}
+		],
+		"name": "forgeEquip",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getCardCollectCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			}
+		],
+		"name": "getCardCollection",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "startId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "stock",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "sales",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "price0",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint112",
+						"name": "price1",
+						"type": "uint112"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust1",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust2",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint48",
+						"name": "adjust3",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseSpecialty",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseComfort",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "baseAesthetic",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "durability",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "level",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "status",
+						"type": "uint16"
+					}
+				],
+				"internalType": "struct RunbitCollection.CardCollection",
+				"name": "cc",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getEquipCollectCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			}
+		],
+		"name": "getEquipCollection",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "startId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "stock",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "sales",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "level",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "equipType",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "status",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint32",
+						"name": "capacity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint48",
+						"name": "quality",
+						"type": "uint48"
+					},
+					{
+						"internalType": "uint64",
+						"name": "price0",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint112",
+						"name": "price1",
+						"type": "uint112"
+					}
+				],
+				"internalType": "struct RunbitCollection.EquipCollection",
+				"name": "ec",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "equipType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "level",
+				"type": "uint256"
+			}
+		],
+		"name": "getForgeFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			}
+		],
+		"name": "getRoleAdmin",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "grantRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "hasRole",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			}
+		],
+		"name": "redeemCard",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collectionId",
+				"type": "uint256"
+			}
+		],
+		"name": "redeemEquip",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "renounceRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "revokeRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "baseURI",
+				"type": "string"
+			}
+		],
+		"name": "setCardBaseURI",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_factory",
+				"type": "address"
+			}
+		],
+		"name": "setCardFactory",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_cardToken",
+				"type": "address"
+			}
+		],
+		"name": "setCardToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "baseURI",
+				"type": "string"
+			}
+		],
+		"name": "setEquipBaseURI",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_factory",
+				"type": "address"
+			}
+		],
+		"name": "setEquipFactory",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_equipToken",
+				"type": "address"
+			}
+		],
+		"name": "setEquipToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "equipType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "level",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "fee",
+				"type": "uint256"
+			}
+		],
+		"name": "setForgeFee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_oracle",
+				"type": "address"
+			}
+		],
+		"name": "setOracle",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_rb",
+				"type": "address"
+			}
+		],
+		"name": "setRB",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_refs",
+				"type": "address"
+			}
+		],
+		"name": "setRefs",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes4",
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

@@ -25,6 +25,7 @@ function createTestnetConfig(network: keyof typeof chainIds): NetworkUserConfig 
     accounts: [PRIVATE_KEY],
     chainId: chainIds[network],
     url,
+    gasPrice: 300000000000
   };
 }
 
@@ -32,7 +33,7 @@ function createTestnetConfig(network: keyof typeof chainIds): NetworkUserConfig 
 // Go to https://hardhat.org/config/ to learn more
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "mumbai",
+  defaultNetwork: "mainnet",
   networks: {
     hardhat: {
       accounts: {
@@ -42,15 +43,20 @@ const config: HardhatUserConfig = {
     },
     mainnet: createTestnetConfig("mainnet"),
     mumbai: createTestnetConfig("mumbai"),
+    bsc: {
+      accounts: [PRIVATE_KEY],
+      chainId: 56,
+      url: "https://bsc-dataseed1.ninicoin.io/",
+    }
   },
   solidity: {
     compilers: [
       {
-        version: '0.8.13',
+        version: '0.8.17',
         settings: {
           optimizer: {
             enabled: true,
-            runs: 100000,
+            runs: 200000,
           },
           metadata: {
             // do not include the metadata hash, since this is machine dependent
