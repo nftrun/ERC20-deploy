@@ -14,7 +14,7 @@ contract RunbitToken is ERC20, ERC20Burnable, ERC20Snapshot, AccessControl, ERC2
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bool _lockMinter = false;
 
-    constructor(address admin) ERC20("RunbitToken", "RB") ERC20Permit("RunbitToken") {
+    constructor(address admin) ERC20("RunbitToken", "RT") ERC20Permit("RunbitToken") {
         _grantRole(DEFAULT_ADMIN_ROLE, admin);
         _grantRole(SNAPSHOT_ROLE, admin);
         _grantRole(MINTER_ROLE, admin);

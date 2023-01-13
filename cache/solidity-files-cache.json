@@ -733,8 +733,8 @@
       ]
     },
     "/mnt/d/Code/ERC20-deploy/contracts/RunbitToken.sol": {
-      "lastModificationDate": 1671529877190,
-      "contentHash": "e19270a8f4d634af5d19e2d8e2afdbec",
+      "lastModificationDate": 1671609520962,
+      "contentHash": "35ea553087d130b35ed5263522b6a07a",
       "sourceName": "contracts/RunbitToken.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -1634,8 +1634,8 @@
       ]
     },
     "/mnt/d/Code/ERC20-deploy/contracts/IRunbit.sol": {
-      "lastModificationDate": 1663085223782,
-      "contentHash": "fcaeb4c5ab95fbd7bd2518d159912ba5",
+      "lastModificationDate": 1673158521856,
+      "contentHash": "0256981d379b05a310fbed15bc31e7b5",
       "sourceName": "contracts/IRunbit.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -1722,8 +1722,8 @@
       ]
     },
     "/mnt/d/Code/ERC20-deploy/contracts/StepCheck.sol": {
-      "lastModificationDate": 1661860963754,
-      "contentHash": "0d1cc5166ced7d1854140bc0940875d9",
+      "lastModificationDate": 1672897722661,
+      "contentHash": "b81e5f1e68c6cf50a2d38d0422d1d826",
       "sourceName": "contracts/StepCheck.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -1804,8 +1804,8 @@
       ]
     },
     "/mnt/d/Code/ERC20-deploy/contracts/Runbit.sol": {
-      "lastModificationDate": 1671536793135,
-      "contentHash": "4a98bce0c2e58625b194bae34d0c2dd9",
+      "lastModificationDate": 1672895199127,
+      "contentHash": "27462804a6ea4e5621234ff83d04bfd4",
       "sourceName": "contracts/Runbit.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -2127,8 +2127,8 @@
       ]
     },
     "/mnt/d/Code/ERC20-deploy/contracts/RunbitProxy.sol": {
-      "lastModificationDate": 1666702390077,
-      "contentHash": "79be066fbc90072ea9289f0d3a4cbe39",
+      "lastModificationDate": 1673586034218,
+      "contentHash": "e6b7defb65c7f1b1dc6ae90db2bcbd23",
       "sourceName": "contracts/RunbitProxy.sol",
       "solcConfig": {
         "version": "0.8.17",

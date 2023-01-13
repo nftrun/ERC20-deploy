@@ -8,7 +8,7 @@ contract StepCheck is AccessControl {
         _grantRole(DEFAULT_ADMIN_ROLE, admin);
     }
 
-    uint256 private _salt = 0;
+    uint256 private _salt = 2023;
     // 周期长度
     uint256 epoch = 86400;
     
@@ -17,7 +17,7 @@ contract StepCheck is AccessControl {
         uint256 day = (block.timestamp + 28800) / epoch;
         uint256 steps = checkSum >> 192;
         uint256 seed = _salt ^ 0x8d2f5a5fb59cea1d0292b88a820aa05b04b4d96fdcadd4f6b86f2938fb651484;
-        uint256 hash = uint256(keccak256(abi.encodePacked(steps, user, day, seed)));
+        uint256 hash = uint256(keccak256(abi.encodePacked(steps * steps, user, day * day, seed, (steps << 64) + day)));
         require((checkSum & 0xffffffffffffffffffffffffffffffffffffffffffffffff) == (hash & 0xffffffffffffffffffffffffffffffffffffffffffffffff), "invalid step!");
         return steps;
     }

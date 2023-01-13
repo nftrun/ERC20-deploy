@@ -18,14 +18,14 @@ const chainIds = {
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 const MNEMONIC = process.env.MNEMONIC || "";
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
-
+//https://rpc-mainnet.matic.quiknode.pro
 function createTestnetConfig(network: keyof typeof chainIds): NetworkUserConfig {
-  const url: string = "https://rpc-" + network + ".maticvigil.com";
+  const url: string = "https://rpc-" + network + ".matic.quiknode.pro";
   return {
     accounts: [PRIVATE_KEY],
     chainId: chainIds[network],
     url,
-    gasPrice: 300000000000
+    // gasPrice: 500000000000
   };
 }
 

@@ -3,9 +3,9 @@ const hre = require("hardhat");
 async function main() {
 
   // We get the contract to deploy
-  const mytoken = await hre.ethers.getContractFactory("RunbitRand");
-  // const dog = await mytoken.deploy("0x0A74fAF22FeA623630B9A00361C55f063D351180","0x9B202F188B0dd9618F44D304A77441A974C1f269", "0x2568D114d06fa03E11b451985778F71437e5e9cf", "0x340d592a978E6a176319b34A921F717fFAbf9f4C");
-  const dog = await mytoken.deploy("0x8009609899128219507292930003719563843565");
+  const mytoken = await hre.ethers.getContractFactory("RunbitProxy");
+  const dog = await mytoken.deploy("0xFC65F798a8F7adf48bE45737b2517242C61829b1","0x3BB5AE1048869a4ee16CB5059eAca74303ADc201", "0xb048Ac124c7F78f4f3AbA48d0ea022Ff2B12e279", "0x00000000008783C915c33B0D7cA46139fB3cF690");
+  // const dog = await mytoken.deploy("0x8009609899128219507292930003719563843565");
   
   console.log("Start to deploy:");
   

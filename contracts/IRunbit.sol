@@ -41,6 +41,7 @@ interface IRunbitCard is IERC721 {
     function tokenMetaData(uint256 tokenId) external view returns (MetaData memory);
     function burn(uint256 tokenId) external;
     function tokenURI(uint256 tokenId) external view returns (string memory);
+    function tokenOfOwnerByIndex(address owner, uint256 index) external view  returns (uint256);
 }
 
 interface IRunbitEquip is IERC721 {
@@ -56,6 +57,7 @@ interface IRunbitEquip is IERC721 {
     function tokenMetaData(uint256 tokenId) external view returns (MetaData memory);
     function burn(uint256 tokenId) external;
     function tokenURI(uint256 tokenId) external view returns (string memory);
+    function tokenOfOwnerByIndex(address owner, uint256 index) external view  returns (uint256);
 }
 
 interface IStepCheck {

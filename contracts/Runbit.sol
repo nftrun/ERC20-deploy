@@ -197,7 +197,7 @@ contract Runbit is AccessControl {
     function updateSteps(uint256 steps) external onlyReferral {
         steps = stepCheck.stepCheck(steps, msg.sender);
         uint256 today = _day();
-        uint256 trackId = _trackId();
+        uint256 trackId = _trackId(msg.sender);
         UserState storage us = userState[msg.sender][today];
         DailyInfo storage dinf = dailyInfo[today];
         require(steps > us.lastSteps, "E01: no need to update!");
@@ -261,7 +261,7 @@ contract Runbit is AccessControl {
                                     dinf.track2 += cm.level;
                                 }
                                 
-                                cardConsume[cid] += 100 * epoch / 86400;
+                                cardConsume[cid] += 1;
                                 sc.equipType = uint64(i);
                                 sc.trackId = uint64(trackId);
                                 userCards[msg.sender][today][us.cardCount] = cid;
@@ -502,8 +502,8 @@ contract Runbit is AccessControl {
         return (block.timestamp + 28800) / epoch;
     }
     
-    function _trackId() private view returns (uint256) {
-        TrackInfo memory ut = userTrack[msg.sender];
+    function _trackId(address user) private view returns (uint256) {
+        TrackInfo memory ut = userTrack[user];
         if (_day() == ut.updateDay) {
             return ut.prev;
         } else {
@@ -511,8 +511,8 @@ contract Runbit is AccessControl {
         }
     }
     
-    function getTrackId() external view returns (uint256, uint256) {
-        return (_trackId(), userTrack[msg.sender].latest);
+    function getTrackId(address user) external view returns (uint256, uint256) {
+        return (_trackId(user), userTrack[user].latest);
     }
 
     function getUserState(address user, uint256 day) external view returns (UserState memory us) {
